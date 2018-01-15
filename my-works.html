@@ -32,7 +32,7 @@
     <!--css-->
     <link rel="stylesheet" href="assets/styles/app.min.css">
   </head>
-  <body>
+  <body id="my-works">
     <!--[if lte IE 8]>
 <script>alert("Вы используете устаревший браузер. Пожалуйста, обновите браузер https://browsehappy.com/")</script>
 <p class="browserupgrade">Вы используете устаревший браузер. <a href="https://browsehappy.com/">Обновите браузер</a> абсолютно бесплатно.</p>
@@ -74,6 +74,7 @@
             </ul>
           </div>
           <div class="header__burger-menu">
+            <!--script(type="text/x-template" id="burger-menu_template")-->
             <button id="burger-menu">
               <div class="burger-menu__icon"><span class="burger-menu__line"></span><span class="burger-menu__line"></span><span class="burger-menu__line"></span></div>
               <nav class="burger-menu__list">
@@ -244,18 +245,18 @@
           <div class="form__title form__title_contact-form">
             <div class="block-subtitle block-subtitle_contact-form">Связаться со мной</div>
           </div>
-          <form class="form">
+          <form class="form" action="assets/php/contact-form.php" method="post" id="contact-form">
             <div class="form__fields">
               <label class="form__label contact-form__label">
-                <input class="form__input contact-form__input" type="text" name="name" placeholder="Имя">
+                <input class="form__input contact-form__input" type="text" name="name" placeholder="Имя" required>
               </label>
               <label class="form__label contact-form__label">
-                <input class="form__input contact-form__input" type="e-mail" name="e-mail" placeholder="E-mail">
+                <input class="form__input contact-form__input" type="email" name="email" placeholder="E-mail" required>
               </label>
-              <textarea class="form__textarea contact-form__textarea" placeholder="Ваше сообщение"></textarea>
+              <textarea class="form__textarea contact-form__textarea" placeholder="Ваше сообщение" name="message" required></textarea>
             </div>
             <div class="nav-btns nav-btns_contact-form">
-              <button class="nav-btns__item form__submit-btn form__submit-btn_contact-form" type="submit" value="Отправить">Отправить</button>
+              <button class="nav-btns__item form__submit-btn form__submit-btn_contact-form" id="show-modal" type="submit" value="Отправить">Отправить</button>
               <button class="nav-btns__item form__reset-btn form__reset-btn_contact-form" type="reset" value="Очистить">Очистить</button>
             </div>
           </form>

@@ -32,7 +32,7 @@
     <!--css-->
     <link rel="stylesheet" href="assets/styles/app.min.css">
   </head>
-  <body>
+  <body id="welcome">
     <!--[if lte IE 8]>
 <script>alert("Вы используете устаревший браузер. Пожалуйста, обновите браузер https://browsehappy.com/")</script>
 <p class="browserupgrade">Вы используете устаревший браузер. <a href="https://browsehappy.com/">Обновите браузер</a> абсолютно бесплатно.</p>
@@ -83,7 +83,7 @@
               </div>
             </div>
             <div class="welcome__nav-btns">
-              <ul class="nav-btns"> 
+              <ul class="nav-btns">
                 <li class="nav-btns__item"><a class="nav-btns__link nav-btns__link_undefined" href="my-works.html">Мои работы</a></li>
                 <li class="nav-btns__item"><a class="nav-btns__link nav-btns__link_undefined" href="about.html">Обо мне</a></li>
                 <li class="nav-btns__item"><a class="nav-btns__link nav-btns__link_undefined" href="blog.html">Блог</a></li>
@@ -95,9 +95,9 @@
               <div class="form__title auth-form__title">
                 <div class="block-subtitle block-subtitle_auth-form">Авторизуйтесь</div>
               </div>
-              <form class="form" action="" method="get">
+              <form class="form" action="server.php" method="post" id="auth-form">
                 <label class="form__label auth-form__label">
-                  <input class="form__input auth-form__input auth-form__input_login" type="text" placeholder="Логин">
+                  <input class="form__input auth-form__input auth-form__input_login" type="text" placeholder="Логин" required>
                   <div class="form__input-fake auth-form__input-fake auth-form__input-fake_login">
                     <svg class="form__input-icon auth-form__input-icon auth-form__input-icon_login" width="15" height="15">
                       <use xlink:href="assets/images/icons/sprite.svg#login"></use>
@@ -105,7 +105,7 @@
                   </div>
                 </label>
                 <label class="form__label auth-form__label">
-                  <input class="form__input auth-form__input auth-form__input_pswd" type="password" placeholder="Пароль">
+                  <input class="form__input auth-form__input auth-form__input_pswd" type="password" placeholder="Пароль" required>
                   <div class="form__input-fake auth-form__input-fake auth-form__input-fake-pswd">
                     <svg class="form__input-icon auth-form__input-icon auth-form__input-icon_pswd" width="17" height="17">
                       <use xlink:href="assets/images/icons/sprite.svg#password"></use>
@@ -113,7 +113,7 @@
                   </div>
                 </label>
                 <label class="form__checkbox-label auth-form__checkbox-label">
-                  <input class="form__checkbox-input auth-form__checkbox-input" type="checkbox" checked>
+                  <input class="form__checkbox-input auth-form__checkbox-input" type="checkbox" id="is-human" name="is-human" value="1" checked>
                   <div class="form__checkbox-fake auth-form__checkbox-fake">
                     <svg class="form__checkbox-icon auth-form__checkbox-icon" width="11" height="11">
                       <use xlink:href="assets/images/icons/sprite.svg#check"></use>
@@ -125,24 +125,22 @@
                   <div class="form__label-text auth-form__label-text auth-form__label-text_radio">Вы точно не робот?</div>
                   <div class="form__radio-input-block auth-form__radio-input-block">
                     <label class="form__radio-label auth-form__radio-label">
-                      <input class="form__radio-input auth-form__radio-input" type="radio" name="isrobot" checked>
+                      <input class="form__radio-input auth-form__radio-input" type="radio" name="not-robot" value="yes" checked>
                       <div class="form__radio-fake auth-form__radio-fake"></div>
                       <div class="form__label-text auth-form__label-text">Да</div>
                     </label>
                     <label class="form__radio-label auth-form__radio-label">
-                      <input class="form__radio-input auth-form__radio-input" type="radio" name="isrobot">
+                      <input class="form__radio-input auth-form__radio-input" type="radio" name="not-robot" value="not-sure">
                       <div class="form__radio-fake auth-form__radio-fake"></div>
                       <div class="form__label-text auth-form__label-text">Я не уверен</div>
                     </label>
                   </div>
                 </div>
+                <div class="auth-form__nav-btns nav-btns nav-btns_auth-form">
+                  <button class="nav-btns__item form__submit-btn form__goto-btn_auth-form" type="button" value="На главную">На главную</button>
+                  <button class="nav-btns__item form__submit-btn form__auth-btn_auth-form" type="submit" value="Войти">Войти</button>
+                </div>
               </form>
-            </div>
-            <div class="auth-form__nav-btns">
-              <ul class="nav-btns"> 
-                <li class="nav-btns__item"><a class="nav-btns__link nav-btns__link_to-main-page" href="index.html">На главную</a></li>
-                <li class="nav-btns__item"><a class="nav-btns__link nav-btns__link_to-enter" href="#">Войти</a></li>
-              </ul>
             </div>
           </div>
         </div>
